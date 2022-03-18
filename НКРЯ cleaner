@@ -1,0 +1,11 @@
+fin = open("corpus.txt", "r", encoding = "utf8")
+
+lines = fin.readlines()
+fout = open("corpus2.txt", "w", encoding = "utf8")
+for line in lines:
+    if "Все примеры (" not in line:
+        fout.write(line.split("[")[0])
+        fout.write("\n")
+
+fin.close()
+fout.close()
